@@ -9,13 +9,15 @@ special_offers = {'3A':130, '2B':45}
 def checkout(skus):
     total = 0
     for item in skus:
+        print(skus)
         same_item_purchased = str(skus.count(item))+'item'
         if same_item_purchased in special_offers:
             total += special_offers[same_item_purchased]
-            skus=skus.replace(item, '')
+            skus.replace(item, '')
         if item in items_prices:
             total += items_prices[item]
         else:
             return -1
     return total
+
 
